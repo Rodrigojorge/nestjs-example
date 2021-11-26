@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+
+  dev:
+
+    build:
+      context: .
+      target: dev
+
+    command: tail -F keeprunning
+    working_dir: /var/api
+    volumes:
+      - .:/var/api:cached
